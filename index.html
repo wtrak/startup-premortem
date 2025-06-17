@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Startup Pre-Mortem Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Startup Pre-Mortem Simulator</h1>
+    <p>Describe your startup and see how it could fail — before it does.</p>
+
+    <form id="premortemForm">
+      <label>Problem:</label>
+      <textarea name="problem" required></textarea>
+
+      <label>Solution:</label>
+      <textarea name="solution" required></textarea>
+
+      <label>Target Users:</label>
+      <textarea name="users" required></textarea>
+
+      <label>Monetization Plan:</label>
+      <textarea name="monetization" required></textarea>
+
+      <label>Tech Stack:</label>
+      <textarea name="tech" required></textarea>
+
+      <label>Team Setup:</label>
+      <textarea name="team" required></textarea>
+
+      <button type="submit">Simulate Failure</button>
+    </form>
+
+    <div id="results" class="hidden">
+      <h2>💀 Failure Scenarios</h2>
+      <pre id="output"></pre>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
