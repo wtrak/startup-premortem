@@ -25,22 +25,18 @@ Generate failure scenarios:
 `
 
   try {
-    const res = await fetch("https://api.openai.com/v1/completions", {
+    const res = await fetch("/api/generate", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer YOUR_OPENAI_API_KEY"
+        "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        model: "text-davinci-003",
-        prompt: prompt,
-        max_tokens: 1000,
-        temperature: 0.8
-      })
+      body: JSON.stringify({ prompt })
     })
 
+    if (!res.ok) throw new Error("Failed to get response from server")
+
     const json = await res.json()
-    output.textContent = json.choices[0].text.trim()
+    output.textContent = json.text
   } catch (err) {
     output.textContent = "Error: " + err.message
   }
